@@ -72,15 +72,14 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0,102,204,0.1);
             transition: all 0.3s ease;
         }
 
         header.scrolled {
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
 
         .header-content {
@@ -142,7 +141,7 @@
 
         nav a {
             text-decoration: none;
-            color: var(--gray-600);
+            color: var(--gray-300);
             font-weight: 500;
             font-size: 0.95rem;
             padding: 10px 18px;
@@ -152,7 +151,7 @@
         }
 
         nav a:hover {
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             background: rgba(0,102,204,0.08);
         }
 
@@ -380,39 +379,39 @@
         .hero-logo-inner {
             position: relative;
             z-index: 1;
-            padding: 60px;
-            text-align: center;
+            padding: 0px;
+            text-align: bottom;
         }
 
-        /*
+        
         .hero-logo-inner img {
-            max-width: 320px;
+            max-width: 100%;
             width: 100%;
             height: auto;
         }
-        */
+        
 
-        .hero-logo-inner .logo-big {
+      /*   .hero-logo-inner .logo-big {
             font-family: 'Sora', sans-serif;
             font-size: 5rem;
             font-weight: 800;
             color: var(--white);
             letter-spacing: -2px;
         }
-
+ */
         .hero-logo-inner .logo-big span {
             color: var(--accent-green);
             position: relative;
         }
 
-        .hero-logo-inner .tagline {
+      /*   .hero-logo-inner .tagline {
             font-size: 1.1rem;
             color: rgba(255,255,255,0.8);
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-top: 8px;
         }
-
+ */
         .hero-stats {
             display: flex;
             gap: 40px;
@@ -2042,7 +2041,8 @@
                              <img src="sua-logo.png" alt="DOA">
                              ============================================ -->
                         <div class="hero-logo-inner">
-                            <div class="logo-big">D<span>O</span>A</div>
+                            <div class="logo-big"><img src="src/public/img/avatar.png" alt="DOA" class="footer-logo">
+</div>
                             <div class="tagline">Soluções em Embalagens</div>
                         </div>
                         <!-- FIM DO LOGO DO HERO -->
