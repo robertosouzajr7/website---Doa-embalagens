@@ -89,7 +89,7 @@
 
         header.scrolled {
             box-shadow: var(--shadow-lg);
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
         }
 
         .header-content {
@@ -109,16 +109,34 @@
         }
 
         /* ============================================
-           LOGO - PARA TROCAR PELA LOGO REAL:
-           1. Descomente a classe .logo img abaixo
-           2. Comente ou remova as classes .logo-text e .logo-subtitle
-           3. No HTML, substitua o conteúdo do <a class="logo"> por:
-              <img src="sua-logo.png" alt="DOA Soluções em Embalagens">
+           LOGO - SISTEMA DE TROCA NO SCROLL
+           - Logo clara (branca) para header transparente
+           - Logo escura (azul/preta) para header com fundo branco
            ============================================ */
 
         .logo img {
             height: 50px;
             width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Logo clara - visível quando não scrollou */
+        .logo-light {
+            display: block;
+        }
+
+        /* Logo escura - escondida quando não scrollou */
+        .logo-dark {
+            display: none;
+        }
+
+        /* Quando scrollar, inverte a visibilidade */
+        header.scrolled .logo-light {
+            display: none;
+        }
+
+        header.scrolled .logo-dark {
+            display: block;
         }
 
         nav {
@@ -138,9 +156,17 @@
             position: relative;
         }
 
+        header.scrolled nav a {
+            color: var(--gray-600);
+        }
+
         nav a:hover {
             color: var(--primary-blue-light);
             background: rgba(0, 102, 204, 0.08);
+        }
+
+        header.scrolled nav a:hover {
+            color: var(--primary-blue);
         }
 
         nav a.active {
@@ -482,6 +508,11 @@
             position: relative;
         }
 
+        /* ============================================
+           FOTO DO GALPÃO - PARA TROCAR:
+           Substitua a div about-image-placeholder por:
+           <img src="foto-galpao.jpg" alt="Centro de Distribuição DOA" style="width:100%; height:auto;">
+           ============================================ */
         .about-image-placeholder {
             aspect-ratio: 4/3;
             background: var(--gradient-blue);
@@ -814,28 +845,63 @@
             margin: 0;
         }
 
-        /* ===== PRODUCTS ===== */
+        /* ===== PRODUCTS SECTION - REESTRUTURADO ===== */
         #produtos {
             background: var(--white);
         }
 
-        .products-intro {
-            text-align: center;
-            margin-bottom: 60px;
+        /* Product Category Section */
+        .product-section {
+            margin-bottom: 80px;
         }
 
-        .products-intro p {
-            font-size: 1.15rem;
+        .product-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .product-section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .product-section-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-blue);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .product-section-icon svg {
+            width: 35px;
+            height: 35px;
+            color: var(--white);
+        }
+
+        .product-section-title h3 {
+            font-size: 1.8rem;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .product-section-title p {
             color: var(--gray-600);
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 0.95rem;
         }
 
+        /* Product Lines Grid */
         .product-lines {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .product-line {
@@ -861,10 +927,10 @@
         }
 
         .product-line.featured::before {
-            content: 'Mais Popular';
+            content: '+ Vendido';
             position: absolute;
             top: 20px;
-            right: -35px;
+            right: -30px;
             background: var(--accent-green);
             color: var(--gray-900);
             font-size: 0.75rem;
@@ -890,7 +956,7 @@
             color: var(--white);
         }
 
-        .product-line h3 {
+        .product-line h4 {
             font-size: 1.5rem;
             color: var(--gray-900);
             margin-bottom: 8px;
@@ -909,194 +975,79 @@
             line-height: 1.7;
         }
 
-        /* ===== PRODUCT CATEGORIES WITH REAL IMAGES ===== */
-        .product-categories {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .product-category {
-            background: var(--off-white);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .product-category:hover {
-            background: var(--white);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-5px);
-        }
-
-        .product-category-image {
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .product-category-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .product-category:hover .product-category-image img {
-            transform: scale(1.05);
-        }
-
-        .product-category-content {
-            padding: 30px;
-        }
-
-        .product-category h3 {
-            font-size: 1.3rem;
-            color: var(--gray-900);
-            margin-bottom: 12px;
-        }
-
-        .product-category p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-        }
-
-        /* ===== PRODUCT GALLERY WITH REAL PHOTOS ===== */
-        .product-gallery {
-            margin-top: 80px;
-            padding: 60px 0;
-            background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
-            border-radius: var(--radius-xl);
-        }
-
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .gallery-header h3 {
-            font-size: 1.8rem;
-            color: var(--gray-900);
-            margin-bottom: 12px;
-        }
-
-        .gallery-header p {
-            color: var(--gray-600);
-        }
-
-        .gallery-grid {
+        /* Product Gallery */
+        .product-gallery-mini {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 0 40px;
+            gap: 16px;
         }
 
-        .gallery-item {
-            position: relative;
+        .gallery-mini-item {
             border-radius: var(--radius-md);
             overflow: hidden;
+            aspect-ratio: 1;
             cursor: pointer;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
-            aspect-ratio: 1;
         }
 
-        .gallery-item:first-child {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .gallery-item:hover {
+        .gallery-mini-item:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
 
-        .gallery-item img {
+        .gallery-mini-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
 
-        .gallery-item:hover img {
+        .gallery-mini-item:hover img {
             transform: scale(1.05);
         }
 
-        .gallery-item-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-item-overlay {
-            opacity: 1;
-        }
-
-        .gallery-item-overlay h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-
-        .gallery-item-overlay span {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 2000;
+        /* Lacres Section Special */
+        .lacres-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             align-items: center;
-            justify-content: center;
-            padding: 40px;
         }
 
-        .lightbox.active {
-            display: flex;
+        .lacres-info h4 {
+            font-size: 1.3rem;
+            color: var(--gray-900);
+            margin-bottom: 16px;
         }
 
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-xl);
+        .lacres-info p {
+            color: var(--gray-600);
+            margin-bottom: 20px;
         }
 
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
+        .lacres-features {
+            list-style: none;
+        }
+
+        .lacres-features li {
+            padding: 8px 0;
+            color: var(--gray-600);
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
+            gap: 12px;
         }
 
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
+        .lacres-features li::before {
+            content: '✓';
+            color: var(--accent-green-dark);
+            font-weight: 700;
+        }
+
+        .lacres-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
         }
 
         /* ===== TESTIMONIALS ===== */
@@ -1218,6 +1169,19 @@
             gap: 12px;
             margin-top: 48px;
             color: var(--white);
+            text-decoration: none;
+            padding: 16px 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .google-badge:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
 
         .google-badge svg {
@@ -1532,6 +1496,55 @@
             cursor: pointer;
         }
 
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero-content {
@@ -1578,22 +1591,15 @@
             .product-lines {
                 grid-template-columns: 1fr;
                 max-width: 450px;
-                margin: 0 auto 80px;
+                margin: 0 auto 40px;
             }
 
-            .product-categories {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .gallery-grid {
+            .product-gallery-mini {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .gallery-item:first-child {
-                grid-column: span 2;
-                grid-row: span 1;
+            .lacres-content {
+                grid-template-columns: 1fr;
             }
 
             .testimonials-grid {
@@ -1677,10 +1683,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                padding: 0 20px;
-                gap: 16px;
+            .product-section-header {
+                flex-direction: column;
+                text-align: center;
             }
 
             .form-row {
@@ -1731,12 +1736,12 @@
                 text-align: center;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .product-gallery-mini {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .gallery-item:first-child {
-                grid-column: span 1;
+            .lacres-gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1747,11 +1752,16 @@
     <header id="header">
         <div class="header-content">
             <!-- ============================================
-                 LOGO DO HEADER - PARA TROCAR:
-                 Substitua o src abaixo pelo caminho da sua logo
+                 LOGO DO HEADER - SISTEMA DE TROCA NO SCROLL
+                 - logo-light: aparece quando header transparente
+                 - logo-dark: aparece quando header branco (scrollou)
                  ============================================ -->
-            <a href="#" class="logo">
-                <img src="src/public/img/logo-doa.png" alt="DOA Soluções em Embalagens">
+            <a href="#inicio" class="logo">
+                <!-- Logo clara para fundo azul (header transparente) -->
+                <!-- NOTA: Usar versão branca da logo aqui quando disponível -->
+                <img src="src/public/img/logo-doa.png" alt="DOA Soluções em Embalagens" class="logo-light">
+                <!-- Logo escura para fundo branco (após scroll) -->
+                <img src="src/public/img/logo-doa-preta.png" alt="DOA Soluções em Embalagens" class="logo-dark">
             </a>
             <!-- FIM DO LOGO DO HEADER -->
 
@@ -1794,7 +1804,11 @@
                     <p>Desde 2015, fornecemos soluções completas em embalagens para pizzarias, confeitarias e muito
                         mais. Qualidade, agilidade e compromisso em cada entrega.</p>
                     <div class="hero-buttons">
-                        <a href="#contato" class="btn btn-primary">
+                        <!-- ============================================
+                             WHATSAPP - TROCAR NÚMERO AQUI
+                             Formato: 55 + DDD + Número (sem espaços ou traços)
+                             ============================================ -->
+                        <a href="https://wa.me/55XXXXXXXXXXX" class="btn btn-primary" target="_blank">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path
@@ -1816,7 +1830,8 @@
                             <div class="stat-label">Lacres/mês</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">9<span>+</span></div>
+                            <!-- ALTERADO: de 9+ para 10+ -->
+                            <div class="stat-number">10<span>+</span></div>
                             <div class="stat-label">Anos de mercado</div>
                         </div>
                     </div>
@@ -1824,13 +1839,13 @@
                 <div class="hero-visual">
                     <div class="hero-logo-display">
                         <!-- ============================================
-                             LOGO DO HERO - PARA TROCAR:
-                             Substitua o src abaixo pelo caminho da sua logo
+                             FOTO DO HERO - PARA TROCAR:
+                             Substitua o src abaixo pela nova foto
                              ============================================ -->
                         <div class="hero-logo-inner">
                             <img src="src/public/img/avatar.png" alt="DOA Soluções em Embalagens">
                         </div>
-                        <!-- FIM DO LOGO DO HERO -->
+                        <!-- FIM DA FOTO DO HERO -->
                     </div>
                 </div>
             </div>
@@ -1843,6 +1858,11 @@
             <div class="about-grid">
                 <div class="about-image">
                     <div class="about-image-main">
+                        <!-- ============================================
+                             FOTO DO GALPÃO - PARA TROCAR:
+                             Substitua a div abaixo por:
+                             <img src="foto-galpao.jpg" alt="Centro de Distribuição DOA" style="width:100%; aspect-ratio:4/3; object-fit:cover;">
+                             ============================================ -->
                         <div class="about-image-placeholder">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1" class="icon">
@@ -1853,6 +1873,7 @@
                             </svg>
                             <span style="color: white">Centro de Distribuição DOA</span>
                         </div>
+                        <!-- FIM DA FOTO DO GALPÃO -->
                     </div>
                     <div class="about-badge">
                         <div class="about-badge-number">2015</div>
@@ -1988,7 +2009,8 @@
                                     </svg>
                                     CD Recife/PE
                                 </h4>
-                                <p>Estrada de Aldeia, 2757 – Km 04 – Tabatinha – Camaragibe/PE</p>
+                                <!-- CORRIGIDO: Tabatinga (não Tabatinha) -->
+                                <p>Estrada de Aldeia, 2757 – Km 04 – Tabatinga – Camaragibe/PE</p>
                             </div>
                             <div class="estrutura-card">
                                 <h4>
@@ -2012,7 +2034,8 @@
                                     </svg>
                                     Armazenamento
                                 </h4>
-                                <p>Milhares de m³ de área útil com controle de estoque e segurança.</p>
+                                <!-- ALTERADO: + de 1500 m³ -->
+                                <p>Mais de 1.500 m³ de área útil com controle de estoque e segurança.</p>
                             </div>
                         </div>
                     </div>
@@ -2094,176 +2117,204 @@
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Products Section - REESTRUTURADO -->
     <section id="produtos">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Produtos</span>
-                <h2 class="section-title">Nossas Linhas de Embalagens</h2>
+                <h2 class="section-title">Nossas Soluções em Embalagens</h2>
                 <p class="section-subtitle">Design exclusivo, resistência e apelo visual que agregam valor à sua marca.
                 </p>
             </div>
 
-            <div class="product-lines">
-                <div class="product-line">
-                    <div class="product-line-icon">
+            <!-- PIZZARIAS -->
+            <div class="product-section">
+                <div class="product-section-header">
+                    <div class="product-section-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
                             <path
-                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                                d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                            <path d="M2 12h20" />
                         </svg>
                     </div>
-                    <h3>Standard</h3>
-                    <div class="product-line-subtitle">O melhor custo-benefício</div>
-                    <p>Desenvolvida para quem busca economia sem abrir mão da qualidade. Materiais eficientes e
-                        estrutura reforçada. Ideal para reduzir custos mantendo o desempenho.</p>
-                </div>
-
-                <div class="product-line featured">
-                    <div class="product-line-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                    </div>
-                    <h3>Intermedium</h3>
-                    <div class="product-line-subtitle">Equilíbrio perfeito</div>
-                    <p>Melhor balanceamento entre resistência, acabamento e valor. Materiais superiores, mais firmeza e
-                        durabilidade. Ideal para negócios consolidados.</p>
-                </div>
-
-                <div class="product-line">
-                    <div class="product-line-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 1l9 4.5v7.5c0 5-3.5 8.5-9 10.5-5.5-2-9-5.5-9-10.5V5.5L12 1z" />
-                            <path d="M9 12l2 2 4-4" />
-                        </svg>
-                    </div>
-                    <h3>Premium</h3>
-                    <div class="product-line-subtitle">Máxima qualidade</div>
-                    <p>O melhor em matérias-primas, design e apresentação. Estrutura superior e acabamento impecável.
-                        Para quem quer a melhor experiência.</p>
-                </div>
-            </div>
-
-            <!-- Product Categories with Real Images -->
-            <div class="product-categories">
-                <div class="product-category">
-                    <div class="product-category-image">
-                        <img src="src/public/img/produto-pizza-pastelburg.jpg"
-                            alt="Caixa de Pizza Pastelburg - 40 Anos">
-                    </div>
-                    <div class="product-category-content">
+                    <div class="product-section-title">
                         <h3>Pizzarias</h3>
-                        <p>Embalagens padrão, temáticas e personalizadas para todos os tamanhos de pizza.</p>
+                        <p>Embalagens padrão, temáticas e personalizadas para todos os tamanhos</p>
                     </div>
                 </div>
 
-                <div class="product-category">
-                    <div class="product-category-image">
-                        <img src="src/public/img/produto-delicias-divina.jpeg" alt="Caixa Delícias Divina">
+                <div class="product-lines">
+                    <div class="product-line">
+                        <div class="product-line-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                            </svg>
+                        </div>
+                        <h4>Standard</h4>
+                        <div class="product-line-subtitle">O melhor custo-benefício</div>
+                        <p>Economia sem abrir mão da qualidade. Materiais eficientes e estrutura reforçada.</p>
                     </div>
-                    <div class="product-category-content">
-                        <h3>Confeitarias</h3>
-                        <p>Tortas, doces, salgados, pãozinho delícia e muito mais com proteção adequada.</p>
+
+                    <!-- ALTERADO: "+ Vendido" no lugar de "Mais Popular" -->
+                    <div class="product-line featured">
+                        <div class="product-line-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                        <h4>Intermedium</h4>
+                        <div class="product-line-subtitle">Equilíbrio perfeito</div>
+                        <p>Melhor balanceamento entre resistência, acabamento e valor.</p>
+                    </div>
+
+                    <div class="product-line">
+                        <div class="product-line-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1l9 4.5v7.5c0 5-3.5 8.5-9 10.5-5.5-2-9-5.5-9-10.5V5.5L12 1z" />
+                                <path d="M9 12l2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h4>Premium</h4>
+                        <div class="product-line-subtitle">Máxima qualidade</div>
+                        <p>O melhor em matérias-primas, design e apresentação.</p>
                     </div>
                 </div>
 
-                <div class="product-category">
-                    <div class="product-category-image">
-                        <img src="src/public/img/produto-lacre-pastelburg.jpeg" alt="Lacre de Segurança Pastelburg">
+                <div class="product-gallery-mini">
+                    <div class="gallery-mini-item"
+                        onclick="openLightbox('src/public/img/produto-pizza-pastelburg.jpeg')">
+                        <img src="src/public/img/produto-pizza-pastelburg.jpeg" alt="Caixa Pizza Pastelburg">
                     </div>
-                    <div class="product-category-content">
-                        <h3>Lacres de Segurança</h3>
-                        <p>Lacres personalizados e padrão para garantir a integridade das suas entregas.</p>
+                    <div class="gallery-mini-item" onclick="openLightbox('src/public/img/produto-pizza-babbo.jpeg')">
+                        <img src="src/public/img/produto-pizza-babbo.jpeg" alt="Caixa Pizza Babbo">
+                    </div>
+                    <div class="gallery-mini-item" onclick="openLightbox('src/public/img/produto-pizza-toutz.jpeg')">
+                        <img src="src/public/img/produto-pizza-toutz.jpeg" alt="Caixa Pizza Toutz">
+                    </div>
+                    <div class="gallery-mini-item"
+                        onclick="openLightbox('src/public/img/produto-pizza-pastelburg.jpeg')">
+                        <img src="src/public/img/produto-pizza-pastelburg.jpeg" alt="Caixa Pizza Pastelburg 2">
                     </div>
                 </div>
             </div>
 
-            <!-- Product Gallery with Real Photos -->
-            <div class="product-gallery">
-                <div class="gallery-header">
-                    <h3>Galeria de Produtos</h3>
-                    <p>Conheça alguns dos nossos trabalhos personalizados</p>
+            <!-- DELICATESSEN E CONFEITARIAS -->
+            <div class="product-section">
+                <div class="product-section-header">
+                    <div class="product-section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 7h-3a2 2 0 01-2-2V2" />
+                            <path
+                                d="M9 22H4a2 2 0 01-2-2V4a2 2 0 012-2h9.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V13" />
+                            <circle cx="17" cy="17" r="5" />
+                            <path d="M17 14v6" />
+                            <path d="M14 17h6" />
+                        </svg>
+                    </div>
+                    <div class="product-section-title">
+                        <h3>Delicatessen e Confeitarias</h3>
+                        <p>Tortas, doces, salgados, pãozinho delícia e muito mais</p>
+                    </div>
                 </div>
-                <div class="gallery-grid">
-                    <!-- Item 1 - Featured (large) -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-pizza-pastelburg.jpeg')">
-                        <img src="src/public/img/produto-pizza-pastelburg.jpeg" alt="Caixa Pizza Pastelburg 40 Anos">
-                        <div class="gallery-item-overlay">
-                            <h4>Pastelburg 40 Anos</h4>
-                            <span>Caixa Comemorativa</span>
+
+                <div class="product-lines">
+                    <div class="product-line">
+                        <div class="product-line-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                            </svg>
                         </div>
+                        <h4>Standard</h4>
+                        <div class="product-line-subtitle">O melhor custo-benefício</div>
+                        <p>Economia sem abrir mão da qualidade. Materiais eficientes e estrutura reforçada.</p>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-pizza-babbo.jpeg')">
-                        <img src="src/public/img/produto-pizza-babbo.jpeg" alt="Caixa Pizza Babbo">
-                        <div class="gallery-item-overlay">
-                            <h4>Babbo Pizza</h4>
-                            <span>Design Hexagonal</span>
+
+                    <div class="product-line featured">
+                        <div class="product-line-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
                         </div>
+                        <h4>Intermedium</h4>
+                        <div class="product-line-subtitle">Equilíbrio perfeito</div>
+                        <p>Melhor balanceamento entre resistência, acabamento e valor.</p>
                     </div>
-                    <!-- Item 3 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-pizza-toutz.jpeg')">
-                        <img src="src/public/img/produto-pizza-toutz.jpeg" alt="Caixa Pizza Toutz">
-                        <div class="gallery-item-overlay">
-                            <h4>Toutz</h4>
-                            <span>Minimalista</span>
+
+                    <div class="product-line">
+                        <div class="product-line-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1l9 4.5v7.5c0 5-3.5 8.5-9 10.5-5.5-2-9-5.5-9-10.5V5.5L12 1z" />
+                                <path d="M9 12l2 2 4-4" />
+                            </svg>
                         </div>
+                        <h4>Premium</h4>
+                        <div class="product-line-subtitle">Máxima qualidade</div>
+                        <p>O melhor em matérias-primas, design e apresentação.</p>
                     </div>
-                    <!-- Item 4 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-delicias-divina.jpeg')">
+                </div>
+
+                <div class="product-gallery-mini">
+                    <div class="gallery-mini-item"
+                        onclick="openLightbox('src/public/img/produto-delicias-divina.jpeg')">
                         <img src="src/public/img/produto-delicias-divina.jpeg" alt="Delícias Divina">
-                        <div class="gallery-item-overlay">
-                            <h4>Delícias Divina</h4>
-                            <span>Confeitaria</span>
-                        </div>
                     </div>
-                    <!-- Item 5 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-dellypanes.jpeg')">
+                    <div class="gallery-mini-item" onclick="openLightbox('src/public/img/produto-dellypanes.jpeg')">
                         <img src="src/public/img/produto-dellypanes.jpeg" alt="Dellypanes">
-                        <div class="gallery-item-overlay">
-                            <h4>Dellypanes</h4>
-                            <span>Delicatessen</span>
-                        </div>
                     </div>
-                    <!-- Item 6 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-doces-vovo.jpeg')">
-                        <img src="src/public/img/produto-doces-vovo.jpeg" alt="Docices da Vovó Quinha">
-                        <div class="gallery-item-overlay">
-                            <h4>Docices da Vovó</h4>
-                            <span>Confeitaria Artesanal</span>
-                        </div>
+                    <div class="gallery-mini-item" onclick="openLightbox('src/public/img/produto-doces-vovo.jpeg')">
+                        <img src="src/public/img/produto-doces-vovo.jpeg" alt="Docices da Vovó">
                     </div>
-                    <!-- Item 7 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-priscilla-diniz.jpeg')">
+                    <div class="gallery-mini-item"
+                        onclick="openLightbox('src/public/img/produto-priscilla-diniz.jpeg')">
                         <img src="src/public/img/produto-priscilla-diniz.jpeg" alt="Priscilla Diniz">
-                        <div class="gallery-item-overlay">
-                            <h4>Priscilla Diniz</h4>
-                            <span>Confeitaria Premium</span>
-                        </div>
                     </div>
-                    <!-- Item 8 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-vila-celebrar.jpeg')">
-                        <img src="src/public/img/produto-vila-celebrar.jpeg" alt="Vila Celebrar">
-                        <div class="gallery-item-overlay">
-                            <h4>Vila Celebrar</h4>
-                            <span>Embalagem Especial</span>
-                        </div>
+                </div>
+            </div>
+
+            <!-- LACRES DE SEGURANÇA -->
+            <div class="product-section">
+                <div class="product-section-header">
+                    <div class="product-section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" />
+                        </svg>
                     </div>
-                    <!-- Item 9 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-etiquetas.jpeg')">
-                        <img src="src/public/img/produto-etiquetas.jpeg" alt="Etiquetas Casa Fornari">
-                        <div class="gallery-item-overlay">
-                            <h4>Casa Fornari</h4>
-                            <span>Etiquetas Personalizadas</span>
-                        </div>
+                    <div class="product-section-title">
+                        <h3>Lacres de Segurança</h3>
+                        <p>Garantia de integridade e confiança para suas entregas</p>
                     </div>
-                    <!-- Item 10 -->
-                    <div class="gallery-item" onclick="openLightbox('src/public/img/produto-lacre-pastelburg.jpeg')">
-                        <img src="src/public/img/produto-lacre-pastelburg.jpeg" alt="Lacre Pastelburg">
-                        <div class="gallery-item-overlay">
-                            <h4>Lacre Pastelburg</h4>
-                            <span>Lacre de Segurança</span>
+                </div>
+
+                <div class="lacres-content">
+                    <div class="lacres-info">
+                        <h4>Personalizados e Padrão</h4>
+                        <p>Nossos lacres de segurança garantem que seu produto chegue intacto ao cliente, transmitindo
+                            confiança e profissionalismo.</p>
+                        <ul class="lacres-features">
+                            <li>Lacres personalizados com sua marca</li>
+                            <li>Lacres padrão DOA de alta qualidade</li>
+                            <li>Material inviolável</li>
+                            <li>Diversas cores disponíveis</li>
+                            <li>Entrega em grande volume</li>
+                        </ul>
+                    </div>
+                    <div class="lacres-gallery">
+                        <div class="gallery-mini-item"
+                            onclick="openLightbox('src/public/img/produto-lacre-pastelburg.jpeg')">
+                            <img src="src/public/img/produto-lacre-pastelburg.jpeg" alt="Lacre Pastelburg">
+                        </div>
+                        <div class="gallery-mini-item" onclick="openLightbox('src/public/img/produto-etiquetas.jpeg')">
+                            <img src="src/public/img/produto-etiquetas.jpeg" alt="Etiquetas Casa Fornari">
+                        </div>
+                        <div class="gallery-mini-item"
+                            onclick="openLightbox('src/public/img/produto-vila-celebrar.jpeg')">
+                            <img src="src/public/img/produto-vila-celebrar.jpeg" alt="Vila Celebrar">
                         </div>
                     </div>
                 </div>
@@ -2391,7 +2442,11 @@
                     </div>
                 </div>
 
-                <div class="google-badge">
+                <!-- ============================================
+                     GOOGLE MEU NEGÓCIO - TROCAR LINK AQUI
+                     Substitua # pelo link das avaliações do Google
+                     ============================================ -->
+                <a href="#" class="google-badge" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -2406,8 +2461,8 @@
                             d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                             fill="#EA4335" />
                     </svg>
-                    <span>Avaliações verificadas no Google</span>
-                </div>
+                    <span>Ver avaliações no Google →</span>
+                </a>
             </div>
         </div>
     </section>
@@ -2430,7 +2485,10 @@
                             </div>
                             <div class="contact-item-text">
                                 <h4>Telefone / WhatsApp</h4>
-                                <a href="tel:+5571993540553">71 9.9354.0553</a>
+                                <!-- ============================================
+                                     NÚMERO DE TELEFONE - TROCAR AQUI
+                                     ============================================ -->
+                                <a href="tel:+55XXXXXXXXXXX">(XX) X.XXXX.XXXX</a>
                             </div>
                         </div>
 
@@ -2444,7 +2502,10 @@
                             </div>
                             <div class="contact-item-text">
                                 <h4>E-mail</h4>
-                                <a href="mailto:contato@doaembalagens.com.br">contato@doaembalagens.com.br</a>
+                                <a
+                                    href="/cdn-cgi/l/email-protection#30535f5e4451445f70545f51555d52515c5157555e431e535f5d1e5242"><span
+                                        class="__cf_email__"
+                                        data-cfemail="32515d5c4653465d72565d53575f50535e5355575c411c515d5f1c5040">[email&#160;protected]</span></a>
                             </div>
                         </div>
 
@@ -2471,7 +2532,8 @@
                             </div>
                             <div class="contact-item-text">
                                 <h4>CD Recife/PE</h4>
-                                <p>Estrada de Aldeia, 2757 – Km 04 – Tabatinha – Camaragibe/PE</p>
+                                <!-- CORRIGIDO: Tabatinga -->
+                                <p>Estrada de Aldeia, 2757 – Km 04 – Tabatinga – Camaragibe/PE</p>
                             </div>
                         </div>
                     </div>
@@ -2520,14 +2582,20 @@
                 <div class="footer-brand">
                     <!-- ============================================
                          LOGO DO FOOTER - PARA TROCAR:
-                         Substitua o src abaixo pelo caminho da sua logo
+                         Use a logo para fundo escuro
                          ============================================ -->
-                    <img src="src/public/img/logo-doa.png" alt="DOA" class="footer-logo">
+                    <img src="src/public/img/logo-doa-branca.png" alt="DOA" class="footer-logo">
                     <!-- FIM DO LOGO DO FOOTER -->
                     <p>Soluções em embalagens para pizzarias, confeitarias e muito mais. Atendemos todo o Nordeste com
                         qualidade, agilidade e compromisso.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Instagram">
+                        <!-- ============================================
+                             REDES SOCIAIS - TROCAR LINKS AQUI
+                             - Instagram: link do Diogenes
+                             - Google: link do Google Meu Negócio
+                             - WhatsApp: número novo
+                             ============================================ -->
+                        <a href="#" aria-label="Instagram" target="_blank">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -2535,13 +2603,24 @@
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                             </svg>
                         </a>
-                        <a href="#" aria-label="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        <!-- TROCADO: Facebook por Google -->
+                        <a href="#" aria-label="Google" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#fff" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#fff" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                    fill="#fff" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#fff" />
                             </svg>
                         </a>
-                        <a href="https://wa.me/5571993540553" aria-label="WhatsApp">
+                        <a href="https://wa.me/55XXXXXXXXXXX" aria-label="WhatsApp" target="_blank">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -2564,10 +2643,9 @@
                 <div class="footer-links">
                     <h4>Produtos</h4>
                     <ul>
-                        <li><a href="#produtos">Linha Standard</a></li>
-                        <li><a href="#produtos">Linha Intermedium</a></li>
-                        <li><a href="#produtos">Linha Premium</a></li>
-                        <li><a href="#produtos">Embalagens Pizzaria</a></li>
+                        <li><a href="#produtos">Pizzarias</a></li>
+                        <li><a href="#produtos">Delicatessen</a></li>
+                        <li><a href="#produtos">Confeitarias</a></li>
                         <li><a href="#produtos">Lacres de Segurança</a></li>
                     </ul>
                 </div>
@@ -2575,8 +2653,13 @@
                 <div class="footer-links">
                     <h4>Contato</h4>
                     <ul>
-                        <li><a href="tel:+5571993540553">71 9.9354.0553</a></li>
-                        <li><a href="mailto:contato@doaembalagens.com.br">contato@doaembalagens.com.br</a></li>
+                        <!-- TROCAR NÚMERO -->
+                        <li><a href="tel:+55XXXXXXXXXXX">(XX) X.XXXX.XXXX</a></li>
+                        <li><a
+                                href="/cdn-cgi/l/email-protection#4d2e2223392c39220d29222c28202f2c212c2a28233e632e2220632f3f"><span
+                                    class="__cf_email__"
+                                    data-cfemail="95f6fafbe1f4e1fad5f1faf4f0f8f7f4f9f4f2f0fbe6bbf6faf8bbf7e7">[email&#160;protected]</span></a>
+                        </li>
                         <li><a href="#contato">CD Salvador/BA</a></li>
                         <li><a href="#contato">CD Recife/PE</a></li>
                     </ul>
@@ -2584,14 +2667,18 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2024 DOA Soluções em Embalagens. Todos os direitos reservados.</p>
+                <p>© 2025 DOA Soluções em Embalagens. Todos os direitos reservados.</p>
                 <p>Feito com 💙 para o Nordeste</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5571993540553" class="whatsapp-btn" target="_blank" rel="noopener"
+    <!-- ============================================
+         WHATSAPP FLUTUANTE - TROCAR NÚMERO AQUI
+         Formato: 55 + DDD + Número (sem espaços)
+         ============================================ -->
+    <a href="https://wa.me/55XXXXXXXXXXX" class="whatsapp-btn" target="_blank" rel="noopener"
         aria-label="Contato via WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
             <path
@@ -2622,11 +2709,9 @@
             button.addEventListener('click', function () {
                 const tabId = this.dataset.tab;
 
-                // Remove active class from all buttons and contents
                 document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
-                // Add active class to clicked button and corresponding content
                 this.classList.add('active');
                 document.getElementById(tabId).classList.add('active');
             });
@@ -2650,7 +2735,7 @@
             });
         });
 
-        // Form submission
+        // Form submission - TROCAR NÚMERO DO WHATSAPP AQUI TAMBÉM
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -2659,7 +2744,6 @@
             const email = document.getElementById('email').value;
             const mensagem = document.getElementById('mensagem').value;
 
-            // Format message for WhatsApp
             const whatsappMessage = encodeURIComponent(
                 `*Contato pelo Site*\n\n` +
                 `*Nome:* ${nome}\n` +
@@ -2668,8 +2752,10 @@
                 `*Mensagem:*\n${mensagem}`
             );
 
-            // Open WhatsApp with pre-filled message
-            window.open(`https://wa.me/5571993540553?text=${whatsappMessage}`, '_blank');
+            // ============================================
+            // TROCAR NÚMERO DO WHATSAPP AQUI
+            // ============================================
+            window.open(`https://wa.me/55XXXXXXXXXXX?text=${whatsappMessage}`, '_blank');
         });
 
         // Phone mask
@@ -2703,14 +2789,12 @@
             document.body.style.overflow = '';
         }
 
-        // Close lightbox on click outside image
         document.getElementById('lightbox').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeLightbox();
             }
         });
 
-        // Close lightbox on ESC key
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeLightbox();
@@ -2733,7 +2817,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.product-line, .product-category, .testimonial-card, .about-feature, .gallery-item').forEach(el => {
+        document.querySelectorAll('.product-line, .product-category-section, .testimonial-card, .about-feature, .gallery-mini-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
