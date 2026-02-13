@@ -1,0 +1,358 @@
+{
+    "en-US": {
+        "exit": "Exit",
+        "back": "Back to menu",
+        "fallback": "Hey, I couldn’t understand your message. How about we try again?",
+        "violence": {
+            "body": "If it’s a situation of assault, you can choose between filing a complaint or going to a care center. What do you prefer?",
+            "complaint": "Complaint",
+            "station": "Care Center"
+        },
+        "intent": {
+            "BANHEIRO": "Do you want to find a restroom?",
+            "caac": "Do you want to find a Care Center?",
+            "CAMAROTE": "Do you want to find the VIP box?",
+            "cram": "Do you want to find a Women’s Support Center?",
+            "expresso": "Do you want to find Expresso Salvador?",
+            "MOTORISTA DE APLICATIVO": "Do you want to find a rideshare pickup point?",
+            "MOTOTÁXI": "Do you want to find a mototaxi stand?",
+            "nenhuma": "I didn’t understand what you want to know",
+            "OBSERVAÇÃO": "Do you want to find a Military Police post?",
+            "ÔNIBUS": "Do you want to find a bus stop?",
+            "SANITÁRIO": "Do you want to find a toilet?",
+            "saude": "Do you want to find a health care station?",
+            "TÁXI": "Do you want to find a taxi stand?"
+        },
+        "list": {
+            "body": "Hey! How can we help you?",
+            "button": "View Options",
+            "items": [
+                {
+                    "description": "Get your Carnival questions answered by our AI.",
+                    "label": "🤖 Salvador AI",
+                    "value": "gogenier - en-US"
+                },
+                {
+                    "description": "Find out where your Trio Elétrico is in real-time!",
+                    "label": "🚛 Trio Tracker",
+                    "value": "trios - en-US"
+                },
+                {
+                    "description": "Locate your Camarote easily!",
+                    "label": "🎉 Find My VIP Box",
+                    "value": "camarote - en-US"
+                },
+                {
+                    "description": "Information about the official Carnival shuttle service.",
+                    "label": "🚍 Expresso Salvador",
+                    "value": "expresso - en-US"
+                },
+                {
+                    "description": "Get the exact location of the nearest pick-up point.",
+                    "label": "🚕 Taxi & Moto-taxi",
+                    "value": "taxi - en-US"
+                },
+                {
+                    "description": "Find the nearest medical assistance point.",
+                    "label": "🏥 Health Stations",
+                    "value": "saude - en-US"
+                },
+                {
+                    "description": "Report an incident or find the nearest assistance center.",
+                    "label": "♀️ Women's Support",
+                    "value": "cram - en-US"
+                },
+                {
+                    "description": "Check for items found or turned in to the City Guard (CGM).",
+                    "label": "🪪 Lost and Found",
+                    "value": "caac - en-US"
+                },
+                {
+                    "description": "",
+                    "label": "🔙 Back",
+                    "value": "Sair"
+                }
+            ],
+            "section": "Our options"
+        },
+        "localization": "Send your location so I can share the closest to you.",
+        "menu": "Hey! I’m here to make your life easier in the middle of the carnival 🎉\n\nNeed:\n- Moto taxi to escape traffic 🏍️\n- Taxi or ride-hailing driver 🚕\n- Bus to go or come back 🚌\n- Quick restroom / bathroom 🚻\n- Food to recharge your energy 🍔\n- VIP box to enjoy in comfort 🎭\n\nJust tell me what you want and enjoy the party.",
+        "no": "No",
+        "position": "All set 😎, I found the closest place to you!\n\n{{PMS_LOCALIZATION.local}}, {{PMS_LOCALIZATION.distancia}} km away. Can I help you with anything else?",
+        "quick_reply": {
+            "back": "Exit",
+            "body": "Something went wrong and we can’t continue right now. What would you like to do?",
+            "tryAgain": "Try again"
+        },
+        "retry": "So, how about trying again?",
+        "welcome": "Welcome to the WhatsApp group for the *Best Carnival in the World* 😍 \n \n Here you'll find information to enhance your experience during the party!",
+        "yes": "Yes"
+    },
+    "es-MX": {
+        "exit": "Salir",
+        "back": "Volver al menú",
+        "fallback": "Ups, no pude entender tu mensaje. ¿Intentamos otra vez?",
+        "violence": {
+            "body": "Si es una situación de agresión, puedes elegir entre hacer una denuncia o ir a un puesto de atención. ¿Qué prefieres?",
+            "complaint": "Denuncia",
+            "station": "Puesto de atención"
+        },
+        "intent": {
+            "BANHEIRO": "¿Quieres encontrar un baño?",
+            "caac": "¿Quieres encontrar un Centro de Acogida?",
+            "CAMAROTE": "¿Quieres encontrar el palco?",
+            "cram": "¿Quieres encontrar un Centro de Atención a la Mujer?",
+            "expresso": "¿Quieres encontrar el Expresso Salvador?",
+            "MOTORISTA DE APLICATIVO": "¿Quieres encontrar un punto para transporte por app?",
+            "MOTOTÁXI": "¿Quieres encontrar un punto de mototaxi?",
+            "nenhuma": "No entiendo lo que quieres saber",
+            "OBSERVAÇÃO": "¿Quieres encontrar un puesto de la Policía Militar?",
+            "ÔNIBUS": "¿Quieres encontrar una parada de autobús?",
+            "SANITÁRIO": "¿Quieres encontrar un sanitario?",
+            "saude": "¿Quieres encontrar un módulo de salud?",
+            "TÁXI": "¿Quieres encontrar un sitio de taxi?"
+        },
+        "list": {
+            "body": "¡Dinos! ¿En qué te podemos ayudar?",
+            "button": "Ver opciones",
+            "items": [
+                {
+                    "description": "Resuelve tus dudas del Carnaval con nuestra IA.",
+                    "label": "🤖 IA de la Ciudad",
+                    "value": "gogenier - es-MX"
+                },
+                {
+                    "description": "¡Sigue en tiempo real dónde está tu Trio Elétrico!",
+                    "label": "🚛 Sigue al Trio",
+                    "value": "trios - es-MX"
+                },
+                {
+                    "description": "¡Consulta la ubicación de tu Camarote!",
+                    "label": "🎊 Mi Camarote",
+                    "value": "camarote - es-MX"
+                },
+                {
+                    "description": "Información sobre el transporte oficial del Carnaval.",
+                    "label": "🚎 Expresso Salvador",
+                    "value": "expresso - es-MX"
+                },
+                {
+                    "description": "Recibe la ubicación exacta del punto más cercano.",
+                    "label": "🚖 Taxi y Mototaxi",
+                    "value": "taxi - es-MX"
+                },
+                {
+                    "description": "Encuentra el punto de atención médica más cercano.",
+                    "label": "🏥 Módulos de Salud",
+                    "value": "saude - es-MX"
+                },
+                {
+                    "description": "Para denuncias o para encontrar el centro de ayuda más cercano.",
+                    "label": "♀️ Atención a la Mujer",
+                    "value": "cram - es-MX"
+                },
+                {
+                    "description": "Busca tus pertenencias encontradas o entregadas a la CGM.",
+                    "label": "🪪  Objetos Perdidos",
+                    "value": "caac - pt-BR"
+                },
+                {
+                    "description": "",
+                    "label": "🔙 Volver",
+                    "value": "Sair"
+                }
+            ],
+            "section": "Nuestras opciones"
+        },
+        "localization": "Envíame tu ubicación y te paso más cercano.",
+        "menu": "¡Hey! Estoy aquí para hacerte la vida más fácil en medio de la fiesta 🎉\n\n¿Necesitas:\n- Moto taxi para esquivar el tráfico 🏍️\n- Taxi o app de transporte 🚕\n- Autobús para ir o volver 🚌\n- Baño / sanitario rápido 🚻\n- Comida para recargar energía 🍔\n- Área VIP para disfrutar con comodidad 🎭\n-Solo dime qué necesitas y sigue la fiesta.",
+        "no": "No",
+        "position": "¡Listo 😎! Encontré el lugar más cercano:\n\n{{PMS_LOCALIZATION.local}}, a {{PMS_LOCALIZATION.distancia}} KM. ¿Te ayudo con algo más?",
+        "quick_reply": {
+            "back": "Salir",
+            "body": "Ocurrió un error inesperado y no podemos continuar ahora. ¿Qué te gustaría hacer?",
+            "tryAgain": "Intentar de nuevo"
+        },
+        "retry": "Entonces, ¿qué tal intentar de nuevo?",
+        "welcome": "Bienvenido al grupo de WhatsApp del *Mejor Carnaval del Mundo* 😍 \n \n ¡Aquí encontrarás información para mejorar tu experiencia durante la fiesta!",
+        "yes": "Sí"
+    },
+    "es-ES": {
+        "exit": "Salir",
+        "back": "Volver al menú",
+        "fallback": "Ups, no pude entender tu mensaje. ¿Intentamos otra vez?",
+        "violence": {
+            "body": "Si es una situación de agresión, puedes elegir entre hacer una denuncia o ir a un puesto de atención. ¿Qué prefieres?",
+            "complaint": "Denuncia",
+            "station": "Puesto de atención"
+        },
+        "intent": {
+            "BANHEIRO": "¿Quieres encontrar un baño?",
+            "caac": "¿Quieres encontrar un Centro de Acogida?",
+            "CAMAROTE": "¿Quieres encontrar el palco?",
+            "cram": "¿Quieres encontrar un Centro de Atención a la Mujer?",
+            "expresso": "¿Quieres encontrar el Expresso Salvador?",
+            "MOTORISTA DE APLICATIVO": "¿Quieres encontrar un punto para transporte por app?",
+            "MOTOTÁXI": "¿Quieres encontrar un punto de mototaxi?",
+            "nenhuma": "No entiendo lo que quieres saber",
+            "OBSERVAÇÃO": "¿Quieres encontrar un puesto de la Policía Militar?",
+            "ÔNIBUS": "¿Quieres encontrar una parada de autobús?",
+            "SANITÁRIO": "¿Quieres encontrar un sanitario?",
+            "saude": "¿Quieres encontrar un módulo de salud?",
+            "TÁXI": "¿Quieres encontrar un sitio de taxi?"
+        },
+        "list": {
+            "body": "¡Dinos! ¿En qué te podemos ayudar?",
+            "button": "Ver opciones",
+            "items": [
+                {
+                    "description": "Aclara tus dudas sobre el Carnaval y el turismo en Salvador con IA",
+                    "label": "🤖 IA de la Prefe",
+                    "value": "gogenier - es-MX"
+                },
+                {
+                    "description": "Mira en tiempo real dónde está tu trio!",
+                    "label": "🚛 Ojo en el Trio",
+                    "value": "trios - es-MX"
+                },
+                {
+                    "description": "Mira en tiempo real dónde está tu palco!",
+                    "label": "🎊 Mi Palco",
+                    "value": "camarote - es-MX"
+                },
+                {
+                    "description": "Info sobre el transporte oficial del Carnaval de SSA",
+                    "label": "🚍 Expresso Salvador",
+                    "value": "expresso - es-MX"
+                },
+                {
+                    "description": "Recibe la ubicación exacta del punto más cercano.",
+                    "label": "🚕 Taxi & Moto",
+                    "value": "taxi - es-MX"
+                },
+                {
+                    "description": "Encuentra el módulo de salud más cercano.",
+                    "label": "🏥 Módulos de Salud",
+                    "value": "saude - es-MX"
+                },
+                {
+                    "description": "CRAM – Centro de atención a la mujer más cercano.",
+                    "label": "♀️ Atención Mujer",
+                    "value": "cram - es-MX"
+                },
+                {
+                    "description": "Encuentra tu artículo encontrado o devuelto a CGM.",
+                    "label": "🪪 Objetos perdidos",
+                    "value": "caac - pt-BR"
+                },
+                {
+                    "description": "",
+                    "label": "🔙 Volver",
+                    "value": "Sair"
+                }
+            ],
+            "section": "Nuestras opciones"
+        },
+        "localization": "Envíame tu ubicación y te paso más cercano.",
+        "menu": "¡Hey! Estoy aquí para hacerte la vida más fácil en medio de la fiesta 🎉\n\n¿Necesitas:\n- Moto taxi para esquivar el tráfico 🏍️\n- Taxi o app de transporte 🚕\n- Autobús para ir o volver 🚌\n- Baño / sanitario rápido 🚻\n- Comida para recargar energía 🍔\n- Área VIP para disfrutar con comodidad 🎭\n-Solo dime qué necesitas y sigue la fiesta.",
+        "no": "No",
+        "position": "¡Listo 😎! Encontré el lugar más cercano:\n\n{{PMS_LOCALIZATION.local}}, a {{PMS_LOCALIZATION.distancia}} KM. ¿Te ayudo con algo más?",
+        "quick_reply": {
+            "back": "Salir",
+            "body": "Ocurrió un error inesperado y no podemos continuar ahora. ¿Qué te gustaría hacer?",
+            "tryAgain": "Intentar de nuevo"
+        },
+        "retry": "Entonces, ¿qué tal intentar de nuevo?",
+        "welcome": "¡Bienvenido al *WhatsApp del Mejor Carnaval del Mundo* 😍\n\nAquí abajo te dejé información para que no pases apuros durante la fiesta!",
+        "yes": "Sí"
+    },
+    "pt-BR": {
+        "back": "Menu anterior",
+        "exit": "Sair",
+        "fallback": "Opa, não foi possível entender a sua mensagem. Que tal tentar novamente?",
+        "violence": {
+            "body": "Se for uma situação de agressão, você pode escolher entre fazer uma denúncia ou ir até um posto de atendimento. O que prefere?",
+            "complaint": "Denúncia",
+            "station": "Posto de atendimento"
+        },
+        "intent": {
+            "BANHEIRO": "Você quer localizar um banheiro?",
+            "caac": "Você quer localizar um Centro de Acolhimento?",
+            "CAMAROTE": "Você quer localizar o camarote?",
+            "cram": "Você quer localizar um Centro de Referência à Mulher?",
+            "expresso": "Você quer localizar o Expresso Salvador?",
+            "MOTORISTA DE APLICATIVO": "Você quer localizar um ponto para motorista de aplicativo?",
+            "MOTOTÁXI": "Você quer localizar um ponto de mototáxi?",
+            "nenhuma": "Não entendi o que você quer saber",
+            "OBSERVAÇÃO": "Você quer localizar um posto da Polícia Militar?",
+            "ÔNIBUS": "Você quer localizar um ponto de ônibus?",
+            "SANITÁRIO": "Você quer localizar um sanitário?",
+            "saude": "Você quer localizar um módulo de saúde?",
+            "TÁXI": "Você quer localizar um ponto de táxi?"
+        },
+        "list": {
+            "body": "Diga-ai , em que podemos te ajudar? ",
+            "button": "Ver Opções",
+            "items": [
+                {
+                    "description": "Tire suas dúvidas sobre o Carnaval e o Turismo de Salvador através da IA",
+                    "label": "🤖 IA da Pref's",
+                    "value": "gogenier - pt-BR"
+                },
+                {
+                    "description": "Saiba em tempo real onde está o seu trio!",
+                    "label": "🚛 De Olho No Trio",
+                    "value": "trios - pt-BR"
+                },
+                {
+                    "description": "Saiba em tempo real onde está o seu camarote!",
+                    "label": "🎉 Onde É Meu Camarote",
+                    "value": "camarote - pt-BR"
+                },
+                {
+                    "description": "Receba maiores informações sobre o transporte oficial do Carnaval de SSA",
+                    "label": "🚍 Expresso Salvador",
+                    "value": "expresso - pt-BR"
+                },
+                {
+                    "description": "Receba a localização exata do ponto mais perto de você.",
+                    "label": "🚕 Taxi & Mototáxi",
+                    "value": "taxi - pt-BR"
+                },
+                {
+                    "description": "Saiba onde é o módulo de saúde mais próximo de você.",
+                    "label": "🏥 Módulos de Saúde",
+                    "value": "saude - pt-BR"
+                },
+                {
+                    "description": "CRAM - Centro de Referência de Atenção a Mulher mais próximo.",
+                    "label": "♀️ Atendimento a Mulher",
+                    "value": "cram - pt-BR"
+                },
+                {
+                    "description": "Encontre seu item encontrado ou devolvido a CGM.",
+                    "label": "🪪 Achados e Perdidos",
+                    "value": "caac - pt-BR"
+                },
+                {
+                    "description": "",
+                    "label": "🔙 Voltar",
+                    "value": "Sair"
+                }
+            ],
+            "section": "Nossas opções"
+        },
+        "localization": "Envie sua localização para eu te mostrar o mais próximo.",
+        "menu": "Ei! Tô aqui pra agilizar seu lado no meio da folia. Você precisa de que? \n 🚕 Taxi & Mototáxi \n- 🚍 Expresso Salvador \n- 🚽 Sanitários\n 🏥 Módulos de Saúde \n \n É só falar que eu te ajudo.",
+        "no": "Não",
+        "position": "Certinho 😎, achei o local mais próximo!\n\n{{PMS_LOCALIZATION.local}}, a {{PMS_LOCALIZATION.distancia}} KM. Posso ajudar em algo mais?",
+        "quick_reply": {
+            "back": "Sair",
+            "body": "Houve um erro inesperado e não podemos continuar agora. O que gostaria de fazer?",
+            "tryAgain": "Tentar novamente"
+        },
+        "retry": "Então, que tal tentar novamente?",
+        "welcome": "Seja bem-vindo(a) ao zap do *Melhor Carnaval do Mundo* 😍 \n \n Aqui você encontra informações para melhorar a sua experiência durante a festa!",
+        "yes": "Sim"
+    }
+}

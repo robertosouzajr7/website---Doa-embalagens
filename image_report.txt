@@ -1,0 +1,42 @@
+--- index.html (19 images) ---
+0: src/public/img/logo-doa.png
+1: src/public/img/logo-doa-preta.png
+2: src/public/img/avatar.png
+3: src/public/img/galpao-salvador-1.jpg.jpeg
+4: src/public/img/galpao-recife-1.jpg.jpeg
+5: src/public/img/galpao-salvador-1.jpg.jpeg
+6: src/public/img/galpao-recife-1.jpg.jpeg
+7: src/public/img/produto-pizza-pastelburg.jpeg
+8: src/public/img/produto-pizza-babbo.jpeg
+9: src/public/img/produto-pizza-toutz.jpeg
+10: src/public/img/produto-delicias-divina.jpeg
+11: src/public/img/produto-dellypanes.jpeg
+12: src/public/img/produto-doces-vovo.jpeg
+13: src/public/img/produto-priscilla-diniz.jpeg
+14: src/public/img/produto-vila-celebrar.jpeg
+15: src/public/img/produto-lacre-pastelburg.jpeg
+16: src/public/img/produto-etiquetas.jpeg
+17: src/public/img/produto-vila-celebrar.jpeg
+18: src/public/img/logo-doa.png
+
+--- novo.html (19 images) ---
+0: src/public/img/logo-doa-branca.png
+1: src/public/img/logo-doa.png
+2: src/public/img/avatar.png
+3: src/public/img/galpao-salvador-1.jpg
+4: src/public/img/galpao-recife-1.jpg
+5: src/public/img/galpao-salvador-1.jpg
+6: src/public/img/galpao-recife-1.jpg
+7: src/public/img/produto-pizza-pastelburg.jpeg
+8: src/public/img/produto-pizza-babbo.jpeg
+9: src/public/img/produto-pizza-toutz.jpeg
+10: src/public/img/produto-delicias-divina.jpeg
+11: src/public/img/produto-dellypanes.jpeg
+12: src/public/img/produto-doces-vovo.jpeg
+13: src/public/img/produto-priscilla-diniz.jpeg
+14: src/public/img/produto-vila-celebrar.jpeg
+15: src/public/img/produto-lacre-pastelburg.jpeg
+16: src/public/img/produto-etiquetas.jpeg
+17: src/public/img/produto-vila-celebrar.jpeg
+18: src/public/img/logo-doa-branca.png
+
