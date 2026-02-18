@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOA Soluções em Embalagens | Nordeste</title>
+    <title>A transformação do seu Delivery começa pela Embalagem. | DOA Soluções</title>
     <meta name="description"
         content="DOA Soluções em Embalagens - Embalagens para pizzarias, confeitarias e lacres de segurança. Atendemos todo o Nordeste.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1331,12 +1331,15 @@
         }
 
         .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 32px;
         }
 
         .testimonial-card {
+            flex: 1 1 300px;
+            max-width: 400px;
             background: var(--white);
             border-radius: var(--radius-lg);
             padding: 36px;
@@ -2043,7 +2046,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">Atendendo todo o Nordeste</div>
-                    <h1>Embalagens que <span>transformam</span> o seu negócio</h1>
+                    <h1>A <span>transformação</span> do seu Delivery começa pela Embalagem.</h1>
                     <p>Desde 2015, fornecemos soluções completas em embalagens para pizzarias, confeitarias e muito
                         mais. Qualidade, agilidade e compromisso em cada entrega.</p>
                     <div class="hero-buttons">
@@ -2714,7 +2717,7 @@
                 </div>
 
                 <!-- Lacres -->
-                <div class="product-card" data-categoria="lacres" data-linha="intermedium"
+                <div class="product-card" data-categoria="lacres"
                     onclick="openLightbox('src/public/img/produto-lacre-pastelburg.jpeg')">
                     <div class="product-card-image">
                         <img src="src/public/img/produto-lacre-pastelburg.jpeg" alt="Lacre Pastelburg">
@@ -2731,14 +2734,13 @@
                     <div class="product-card-content">
                         <div class="product-card-tags">
                             <span class="product-tag categoria">Lacre</span>
-                            <span class="product-tag linha">Intermedium</span>
                         </div>
                         <h4>Lacre Pastelburg</h4>
                         <p>Lacre de segurança personalizado</p>
                     </div>
                 </div>
 
-                <div class="product-card" data-categoria="lacres" data-linha="premium"
+                <div class="product-card" data-categoria="lacres"
                     onclick="openLightbox('src/public/img/produto-etiquetas.jpeg')">
                     <div class="product-card-image">
                         <img src="src/public/img/produto-etiquetas.jpeg" alt="Etiquetas Casa Fornari">
@@ -2755,14 +2757,13 @@
                     <div class="product-card-content">
                         <div class="product-card-tags">
                             <span class="product-tag categoria">Lacre</span>
-                            <span class="product-tag linha">Premium</span>
                         </div>
                         <h4>Casa Fornari</h4>
                         <p>Etiquetas personalizadas</p>
                     </div>
                 </div>
 
-                <div class="product-card" data-categoria="lacres" data-linha="standard"
+                <div class="product-card" data-categoria="lacres"
                     onclick="openLightbox('src/public/img/produto-vila-celebrar.jpeg')">
                     <div class="product-card-image">
                         <img src="src/public/img/produto-vila-celebrar.jpeg" alt="Lacre Padrão">
@@ -2779,7 +2780,6 @@
                     <div class="product-card-content">
                         <div class="product-card-tags">
                             <span class="product-tag categoria">Lacre</span>
-                            <span class="product-tag linha">Standard</span>
                         </div>
                         <h4>Lacre Padrão DOA</h4>
                         <p>Lacre de segurança econômico</p>
@@ -2816,6 +2816,7 @@
                 </div>
 
                 <div class="testimonials-grid">
+                    <!-- 1. Beeto Ramos -->
                     <div class="testimonial-card">
                         <div class="testimonial-stars">
                             <svg viewBox="0 0 24 24">
@@ -2839,17 +2840,93 @@
                                     points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                             </svg>
                         </div>
-                        <p class="testimonial-text">"Excelente atendimento e qualidade nas embalagens. A DOA sempre
-                            entrega no prazo e com produtos de primeira linha."</p>
+                        <p class="testimonial-text">"Pizzaria Di Roma e DOA, já somos parceiros há 6 anos! Qualidade no
+                            produto, responsabilidade e compromisso na entrega, atenção e educação no trato com o
+                            cliente são algumas de outras tantas qualidades dessa empresa! Vida longa a DOA. Parabéns!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">B</div>
+                            <div>
+                                <div class="testimonial-author-name">Beeto Ramos</div>
+                                <div class="testimonial-author-role">Pizzaria Di Roma</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Lucas Coelho -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"Quero agradecer ao ótimo atendimento prestado, e quero também dar
+                            parabéns ao ótimo produto, as caixas são excelentes. Falo em nome da Malta pizzaria, situada
+                            no Acre."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">L</div>
+                            <div>
+                                <div class="testimonial-author-name">Lucas Coelho</div>
+                                <div class="testimonial-author-role">Malta Pizzaria</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Marcus Lopes -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg viewBox="0 0 24 24">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"Produtos de alta qualidade, como sou cliente novo, achei um pouco
+                            demorado o retorno no processo de cadastro, mas após ser cadastrado não tenho o que reclamar
+                            do atendimento, sempre fui muito bem atendido, são profissionais como poucos, recomendo
+                            demais a empresa e espero continuar como parceiro durante muito tempo!"</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">M</div>
                             <div>
-                                <div class="testimonial-author-name">Marcos Silva</div>
-                                <div class="testimonial-author-role">Proprietário - Pizzaria</div>
+                                <div class="testimonial-author-name">Marcus Lopes</div>
+                                <div class="testimonial-author-role">Cliente Parceiro</div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- 4. Antonio Torres -->
                     <div class="testimonial-card">
                         <div class="testimonial-stars">
                             <svg viewBox="0 0 24 24">
@@ -2873,17 +2950,19 @@
                                     points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                             </svg>
                         </div>
-                        <p class="testimonial-text">"Parceria de anos com a DOA. Nunca ficamos sem embalagem, o modelo
-                            de distribuição deles é perfeito para nosso negócio."</p>
+                        <p class="testimonial-text">"DOA e PIZZARIA DA FAMILIA, tem tudo haver!! espero que a nossa
+                            parceria possa durar enquanto for bom para ambas as partes. Até o presente momento estamos
+                            muito satisfeitos."</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">A</div>
                             <div>
-                                <div class="testimonial-author-name">Ana Costa</div>
-                                <div class="testimonial-author-role">Gerente - Confeitaria</div>
+                                <div class="testimonial-author-name">Antonio Torres</div>
+                                <div class="testimonial-author-role">Pizzaria da Familia</div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- 5. Cassio Leal -->
                     <div class="testimonial-card">
                         <div class="testimonial-stars">
                             <svg viewBox="0 0 24 24">
@@ -2907,13 +2986,15 @@
                                     points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                             </svg>
                         </div>
-                        <p class="testimonial-text">"Profissionalismo e comprometimento. As embalagens personalizadas
-                            elevaram o padrão da nossa marca. Recomendo!"</p>
+                        <p class="testimonial-text">"Atendimento Sem Comentários a Empresa e Diferenciada. Atendimento
+                            Produto Logística de Entrega Tudo No Cronograma Perfeito. Podem Fazer Seus Pedidos Sem Medo
+                            Sou Do Tocantins e Apartir de Então é Minha Empresa de Embalagens Que Posso Confiar sem
+                            Medo."</p>
                         <div class="testimonial-author">
-                            <div class="testimonial-avatar">R</div>
+                            <div class="testimonial-avatar">C</div>
                             <div>
-                                <div class="testimonial-author-name">Roberto Mendes</div>
-                                <div class="testimonial-author-role">Empresário - Delivery</div>
+                                <div class="testimonial-author-name">Cassio Leal</div>
+                                <div class="testimonial-author-role">Cliente - Tocantins</div>
                             </div>
                         </div>
                     </div>
@@ -2923,7 +3004,7 @@
                      GOOGLE MEU NEGÓCIO - TROCAR LINK AQUI
                      Substitua # pelo link das avaliações do Google
                      ============================================ -->
-                <a href="#" class="google-badge" target="_blank" rel="noopener">
+                <a href="https://g.page/r/CRVcNO3UeiPzEAE/review" class="google-badge" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -2980,9 +3061,7 @@
                             <div class="contact-item-text">
                                 <h4>E-mail</h4>
                                 <a
-                                    href="/cdn-cgi/l/email-protection#f1929e9f8590859eb1959e90829e9d84929e9482949c949c93909d9096949f82df929e9cdf9383"><span
-                                        class="__cf_email__"
-                                        data-cfemail="781b17160c190c17381c17190b17140d1b171d0b1d151d151a1914191f1d160b561b1715561a0a">[email&#160;protected]</span></a>
+                                    href="mailto:contato@doasolucoesemembalagens.com.br">contato@doasolucoesemembalagens.com.br</a>
                             </div>
                         </div>
 
@@ -3072,7 +3151,8 @@
                              - Google: link do Google Meu Negócio
                              - WhatsApp: número novo
                              ============================================ -->
-                        <a href="#" aria-label="Instagram" target="_blank">
+                        <a href="https://www.instagram.com/doaembalagens?igsh=MTU1emVjd2tkaHZ6" aria-label="Instagram"
+                            target="_blank">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -3081,7 +3161,7 @@
                             </svg>
                         </a>
                         <!-- TROCADO: Facebook por Google -->
-                        <a href="#" aria-label="Google" target="_blank">
+                        <a href="https://g.page/r/CRVcNO3UeiPzEAE/review" aria-label="Google" target="_blank">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -3133,9 +3213,7 @@
                         <!-- TROCAR NÚMERO -->
                         <li><a href="tel:+5571993145252">(71) 9.9314.5252</a></li>
                         <li><a
-                                href="/cdn-cgi/l/email-protection#12717d7c6673667d52767d73617d7e67717d7761777f777f70737e7375777c613c717d7f3c7060"><span
-                                    class="__cf_email__"
-                                    data-cfemail="82e1edecf6e3f6edc2e6ede3f1edeef7e1ede7f1e7efe7efe0e3eee3e5e7ecf1ace1edeface0f0">[email&#160;protected]</span></a>
+                                href="mailto:contato@doasolucoesemembalagens.com.br">contato@doasolucoesemembalagens.com.br</a>
                         </li>
                         <li><a href="#contato">CD Salvador/BA</a></li>
                         <li><a href="#contato">CD Recife/PE</a></li>
